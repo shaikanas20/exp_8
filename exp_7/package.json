@@ -1,5 +1,7 @@
-{
-  "name": "react_folder",
+
+{"homepage": "https://shaikanas20.github.io/exp_7",
+
+  "name": "exp_7",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
