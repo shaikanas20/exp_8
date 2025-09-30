@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+]);
+  const removePatient = (id) => {
+    setPatients(patients.filter((patient) => patient.id !== id));
+  };
+
+  return (
+    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {patients.map((patient) => (
+        <div
+          key={patient.id}
+          className="bg-white shadow-md rounded-2xl p-4 flex flex-col justify-between"
+        >
+          <div>
+            <h2 className="text-xl font-bold">{patient.name}</h2>
+            <p className="text-gray-600">ID: {patient.id}</p>
+            <p className="text-gray-600">Disease: {patient.disease}</p>
+          </div>
+          <button
+            onClick={() => removePatient(patient.id)}
+            className="mt-4 bg-red-500 text-white py-1 px-3 rounded-xl hover:bg-red-600"
+          >
+            Remove
+          </button>
+        </div>
+      ))}
+
+      {patients.length === 0 && (
+        <p className="text-gray-500 text-center col-span-full">
+          No patients available
+        </p>
+      )}
+    </div>
+  );
+}
